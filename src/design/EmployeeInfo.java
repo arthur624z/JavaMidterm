@@ -1,6 +1,11 @@
 package design;
 
+import databases.ConnectToSqlDB;
+
 import java.util.Scanner;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class EmployeeInfo {
 
@@ -135,5 +140,8 @@ public class EmployeeInfo {
             return date;
 
         }
+    }
+
+    public class Department {
     }
 }

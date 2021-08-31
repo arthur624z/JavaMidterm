@@ -14,18 +14,22 @@ public interface Employee {
      */
 
     // employeeId() will return employee id.
-    int employeeId();
+    int employeeId(String employeeName);
 
     //employeeName() will return employee name
-    String employeeName();
+    String employeeName(int employeeId);
 
-    //assignDepartment() will assign employee to departments
+    //employeeSalary() returns employee salary
+    int employeeSalary(String employeeName);
+
+    //employeeDepartment() returns employee department
+    EmployeeInfo.Department employeeDepartment(String employeeName);
+
+    //assignDepartment() will assign employee to a specific department
     void assignDepartment();
 
-    //calculate employee salary
-    int calculateSalary();
-
-    //employee benefit
+    //a layout of different employee benefit
     void benefitLayout();
+
 
 }
