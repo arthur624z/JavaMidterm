@@ -1,30 +1,42 @@
 package algorithm;
 
-import org.testng.Assert;
+
+import java.util.Arrays;
 
 public class UnitTestSorting {
 
-    /*
-      This class is used to help with unit testing of sorting algorithms from the Sort class
-     */
+
+
     public static void main(String[] args) {
-        int[] unSortedArray = {6, 9, 2, 5, 1, 0, 4};
-        int[] sortedArray = {0, 1, 2, 4, 5, 6, 9};
+        Sort sortArgo = new Sort();
 
-        // Create instance of Sort class
-        Sort sort = new Sort();
+        int[] array = {11,15,16,12,10,20,19,13,14,18,17,5,4,1,2,3,7,6,9,8};
+        System.out.println("This is the unSorted Array: " + Arrays.toString(array));
 
-        // Pass the unsorted array to selectionSort() method from Sort class
-        sort.selectionSort(unSortedArray);
+        sortArgo.selectionSort(array);
+        System.out.println("This is the integer array sorted with selectionSort: " + Arrays.toString(array));
 
-        // Verify if the unsorted array is sorted by the selectionSort() method
-        try {
-            Assert.assertEquals(unSortedArray, sortedArray, "ARRAY IS NOT SORTED... YET!\n***YOU GOT THIS!***");
-        } catch (Exception ex) {
-            ex.getMessage();
-        }
+        sortArgo.insertionSort(array);
+        System.out.println("This is the integer array sorted with insertionSort: " + Arrays.toString(array));
 
-        // Implement Unit test for rest of the sorting algorithms below
+        sortArgo.bubbleSort(array);
+        System.out.println("This is the integer array sorted with bubbleSort: " + Arrays.toString(array));
 
+        sortArgo.mergeSort(array, 0, array.length - 1);
+        System.out.println("This is the integer array sorted with mergeSort: " + Arrays.toString(array));
+
+        sortArgo.quickSort(array, 0, array.length - 1);
+        System.out.println("This is the integer array sorted with quickSort: " + Arrays.toString(array));
+
+        sortArgo.heapSort(array);
+        System.out.println("This is the integer array sorted with heapSort: " + Arrays.toString(array));
+
+        sortArgo.bucketSort(array, 10);
+        System.out.println("This is the integer array sorted with bucketSort: " + Arrays.toString(array));
+
+        sortArgo.shellSort(array, array.length);
+        System.out.println("This is the integer array sorted with shellSort: " + Arrays.toString(array));
     }
+
+
 }
